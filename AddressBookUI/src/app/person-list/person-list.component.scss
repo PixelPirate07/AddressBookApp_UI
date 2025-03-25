@@ -1,0 +1,50 @@
+/* filepath: c:\Users\pande\Desktop\AddressBookFrontend\AddressBookUI\src\app\components\person-list\person-list.component.scss */
+.person-list-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .person-list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .person-list-table th, .person-list-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .person-list-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  .person-list-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .person-list-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .person-list-table th, .person-list-table td {
+    padding: 12px 15px;
+  }
+  
+  .person-list-table th {
+    background-color: #03a9f4;
+    color: white;
+  }
+  
+  .add-person-btn {
+    background-color: #03a9f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .add-person-btn:hover {
+    background-color: #03a9f4;
+  }

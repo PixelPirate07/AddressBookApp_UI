@@ -1,0 +1,30 @@
+<h2>Person Details</h2>
+<div class="header">
+    <button class="add-person-btn" (click)="showForm()">+ Add Person</button>
+</div>
+
+<div class="person-list-container">
+  <table class="person-list-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of personList">
+        <td>{{ person.name }}</td>      <!-- Updated field -->
+        <td>{{ person.address }}</td>
+        <td>{{ person.phoneNumber }}</td>
+        <td>{{ person.email }}</td>     <!-- Added Email field -->
+        <td>
+          <button (click)="onEdit(person)">✏️</button>
+          <button (click)="onDelete(person.id)">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

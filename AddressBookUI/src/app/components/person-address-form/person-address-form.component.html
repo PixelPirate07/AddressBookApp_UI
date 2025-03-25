@@ -1,0 +1,27 @@
+<div class="form-container">
+    <div class="form-header">
+        <span>PERSON ADDRESS FORM</span>
+        <button class="close-btn" (click)="onCancel()">✖</button>
+    </div>
+
+    <form (ngSubmit)="onSave()" #personForm="ngForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" [(ngModel)]="newPerson.name" name="name" required placeholder="Enter Full Name">
+
+        <label for="address">Address</label>
+        <textarea id="address" [(ngModel)]="newPerson.address" name="address" rows="3" placeholder="Enter Address"></textarea>
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" id="phoneNumber" [(ngModel)]="newPerson.phoneNumber" name="phoneNumber" required placeholder="Enter Phone Number">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="newPerson.email" name="email" required placeholder="Enter Email">
+
+        <div class="button-group">
+            <button type="submit" class="add-btn" [disabled]="!personForm.valid">
+                {{ newPerson.id ? 'Update' : 'Add' }}
+            </button>
+            <button type="button" class="reset-btn" (click)="onReset()">Reset</button>
+        </div>
+    </form>
+</div>

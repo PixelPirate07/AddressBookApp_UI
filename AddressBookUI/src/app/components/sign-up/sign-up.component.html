@@ -1,0 +1,26 @@
+<div class="form-container">
+  <div class="form-header">
+    <span>Sign Up</span>
+  </div>
+  <form (ngSubmit)="onSignUp()" #signUpForm="ngForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required placeholder="Enter Name">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder="Enter Email">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder="Enter Password">
+
+    <label for="role">Role</label>
+    <select id="role" [(ngModel)]="role" name="role" required>
+      <option value="" disabled selected>Select Role</option>
+      <option value="USER">User</option>
+      <option value="ADMIN">Admin</option>
+    </select>
+
+    <div class="button-group">
+      <button type="submit" class="add-btn" [disabled]="!signUpForm.valid">Sign Up</button>
+    </div>
+  </form>
+</div>

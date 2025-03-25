@@ -1,0 +1,11 @@
+<div *ngIf="!isFormVisible">
+    <app-person-list [personList]="personList" (addNew)="showForm()" (editPerson)="editPerson($event)" (deletePerson)="deletePerson($event)"></app-person-list>
+</div>
+
+<div *ngIf="isFormVisible">
+    <app-person-address-form 
+        [person]="selectedPerson"
+        (cancel)="hideForm()" 
+        (save)="addPerson($event)">
+    </app-person-address-form>
+</div>

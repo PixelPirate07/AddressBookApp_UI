@@ -15,18 +15,18 @@ export class LoginComponent {
 
   onLogin() {
     this.authService.login(this.email, this.password).subscribe(
-      (response: any) => {  // Changed to 'response' instead of 'isAuthenticated'
-        if (response && response.token) {
-          console.log('Login successful');
-          localStorage.setItem('token', response.token);  // Corrected token reference
-          this.router.navigate(['/address-book']);
+      (response) => {
+        if (response) {
+          console.log('Login successful:', response);
+          localStorage.setItem('token', response.toString()); // Save the token in localStorage
+          this.router.navigate(['/address-book']); // Navigate to the address book page
         } else {
           console.log('Login failed: Invalid credentials');
           alert('Login failed: Invalid credentials');
         }
       },
       (error) => {
-        console.log('Login failed:', error);
+        console.error('Login failed:', error);
         alert('Login failed: ' + (error.error?.message || 'Unknown error'));
       }
     );
